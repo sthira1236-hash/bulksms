@@ -2,8 +2,8 @@
 
 <script>
 
-const supabaseUrl = "PASTE_PROJECT_URL_HERE";
-const supabaseKey = "PASTE_PUBLISHABLE_KEY_HERE";
+const supabaseUrl = "PASTE_YOUR_PROJECT_URL";
+const supabaseKey = "PASTE_YOUR_PUBLISHABLE_KEY";
 
 const client = supabase.createClient(supabaseUrl, supabaseKey);
 
@@ -21,9 +21,7 @@ let license = btoa(deviceId + "-RADHA-BULKSMS");
 document.getElementById("result").innerHTML =
 "License Key: <b>"+license+"</b>";
 
-await client
-.from("licenses")
-.insert([
+await client.from("licenses").insert([
 {
 device_id: deviceId,
 license_key: license
