@@ -1,58 +1,61 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Bulk SMS Software</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
 body{
+font-family:Arial, sans-serif;
+background:#f4f6f9;
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f5f5f5;
+padding:0;
 text-align:center;
 }
 
 .header{
 background:#1e73e8;
 color:white;
-padding:60px 20px;
+padding:30px;
 }
 
-.header h1{
-font-size:38px;
+.container{
+margin-top:60px;
+}
+
+.box{
+background:white;
+width:380px;
+margin:auto;
+padding:40px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2{
 margin-bottom:10px;
 }
 
-.header p{
-font-size:18px;
-}
-
-.section{
-padding:60px 20px;
-}
-
-.section h2{
-font-size:28px;
-margin-bottom:10px;
-}
-
-.section p{
-font-size:18px;
+p{
 color:#555;
 }
 
-.btn{
-margin-top:20px;
-padding:15px 35px;
-font-size:18px;
+button{
+padding:14px 28px;
+font-size:16px;
 border:none;
-border-radius:8px;
+border-radius:6px;
 cursor:pointer;
+margin-top:15px;
+}
+
+.download{
+background:#1e73e8;
+color:white;
 }
 
 .buy{
@@ -61,31 +64,12 @@ color:white;
 }
 
 .activate{
-background:#1e73e8;
+background:#ff9800;
 color:white;
 }
 
-.features{
-margin-top:50px;
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:25px;
-}
-
-.box{
-background:white;
-padding:25px;
-width:250px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.footer{
-margin-top:70px;
-background:#222;
-color:white;
-padding:20px;
+button:hover{
+opacity:0.9;
 }
 
 </style>
@@ -95,66 +79,52 @@ padding:20px;
 <body>
 
 <div class="header">
-
 <h1>Bulk SMS Software</h1>
-<p>Send Bulk SMS using your Android Phone</p>
-
+<p>Send Bulk SMS directly from your Android phone</p>
 </div>
 
-<div class="section">
+<div class="container">
 
-<h2>Professional SMS Marketing Tool</h2>
+<div class="box">
 
-<p>
-Import contacts, upload Excel numbers, send marketing SMS
-and manage SMS campaigns easily.
-</p>
+<h2>Download Software</h2>
 
-<br>
+<p>Download the Android Bulk SMS application.</p>
 
-<a href="https://razorpay.me/@rradhakrishnan757" target="_blank">
-<button class="btn buy">Buy License ₹499</button>
+<a href="bulksms.apk">
+<button class="download">
+Download APK
+</button>
 </a>
 
 <br><br>
 
-<p>After payment activate your license here</p>
+<h2>Buy License</h2>
 
-<a href="activate.html">
-<button class="btn activate">Activate License</button>
+<p>Activate full SMS features.</p>
+
+<a href="https://razorpay.me/@rradhakrishnan757" target="_blank">
+<button class="buy">
+Buy License ₹499
+</button>
 </a>
 
-<div class="features">
+<br><br>
 
-<div class="box">
-<h3>Unlimited SMS</h3>
-<p>Send SMS to thousands of numbers easily.</p>
-</div>
+<h2>Activate License</h2>
 
-<div class="box">
-<h3>Import Contacts</h3>
-<p>Import contacts directly from your phone.</p>
-</div>
+<p>After payment enter your Device ID.</p>
 
-<div class="box">
-<h3>Excel Import</h3>
-<p>Upload numbers from Excel and send SMS instantly.</p>
-</div>
-
-<div class="box">
-<h3>Delivery Reports</h3>
-<p>Track SMS delivery and campaign results.</p>
-</div>
+<a href="activate.html">
+<button class="activate">
+Activate License
+</button>
+</a>
 
 </div>
-
-</div>
-
-<div class="footer">
-
-© 2026 Bulk SMS Software
 
 </div>
 
 </body>
+
 </html>
