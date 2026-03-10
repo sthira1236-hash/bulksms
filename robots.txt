@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sthira1236-hash.github.io/bulksms/sitemap.xml
