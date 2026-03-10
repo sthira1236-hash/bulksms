@@ -1,74 +1,79 @@
 <!DOCTYPE html>
 
-<html>
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bulk SMS Sender</title>
+<title>Bulk SMS Sender Software</title>
+
+<meta name="google-site-verification" content="2dPUVR7bzkCJ09pZkwJuJK5Xsv28v0RdY34NjwcCJhs" />
 
 <style>
 
 body{
-font-family:Arial;
-background:#f4f6f9;
+font-family: Arial;
 margin:0;
-padding:0;
+background:#f4f6f9;
 text-align:center;
 }
 
 .header{
-background:#2d7df6;
+background:#3b82f6;
 color:white;
-padding:30px;
+padding:25px;
 font-size:28px;
 font-weight:bold;
 }
 
 .container{
-width:90%;
 max-width:800px;
 margin:auto;
-margin-top:40px;
+padding:30px;
 }
 
 .card{
 background:white;
 padding:30px;
-margin-bottom:30px;
+margin:20px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.15);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .features p{
+margin:8px;
 font-size:16px;
-margin:8px 0;
 }
 
 .price{
 font-size:28px;
-color:#2d7df6;
 font-weight:bold;
+color:#3b82f6;
 }
 
 .btn{
 display:inline-block;
-background:#2d7df6;
-color:white;
 padding:12px 25px;
-margin-top:15px;
+background:#3b82f6;
+color:white;
+border-radius:6px;
 text-decoration:none;
-border-radius:5px;
-font-size:16px;
+margin-top:15px;
 }
 
 .btn:hover{
-background:#1f5ed1;
+background:#2563eb;
 }
 
 </style>
+
+<script>
+
+function allowActivation(){
+localStorage.setItem("paid","true");
+}
+
+</script>
 
 </head>
 
@@ -124,17 +129,5 @@ Bulk SMS Sender Software
 
 </div>
 
-<script>
-
-function allowActivation(){
-
-localStorage.setItem("payment_clicked","yes");
-
-}
-
-</script>
-
 </body>
-
 </html>
-
