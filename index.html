@@ -1,65 +1,71 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bulk SMS Software License</title>
+<title>Bulk SMS Sender</title>
 
 <style>
 
 body{
-font-family: Arial;
+font-family:Arial;
 background:#f4f6f9;
 margin:0;
 padding:0;
 text-align:center;
 }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px;
+.header{
+background:#2d7df6;
+color:white;
+padding:30px;
+font-size:28px;
+font-weight:bold;
 }
 
-h1{
-color:#333;
+.container{
+width:90%;
+max-width:800px;
+margin:auto;
+margin-top:40px;
 }
 
 .card{
 background:white;
 padding:30px;
-margin-top:20px;
+margin-bottom:30px;
 border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
+box-shadow:0 0 10px rgba(0,0,0,0.15);
+}
+
+.features p{
+font-size:16px;
+margin:8px 0;
 }
 
 .price{
 font-size:28px;
-color:#28a745;
+color:#2d7df6;
 font-weight:bold;
 }
 
 .btn{
 display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-background:#007bff;
+background:#2d7df6;
 color:white;
+padding:12px 25px;
+margin-top:15px;
 text-decoration:none;
-border-radius:6px;
+border-radius:5px;
 font-size:16px;
 }
 
 .btn:hover{
-background:#0056b3;
-}
-
-.features{
-text-align:left;
-margin-top:20px;
+background:#1f5ed1;
 }
 
 </style>
@@ -68,9 +74,11 @@ margin-top:20px;
 
 <body>
 
-<div class="container">
+<div class="header">
+Bulk SMS Sender Software
+</div>
 
-<h1>Bulk SMS Software</h1>
+<div class="container">
 
 <div class="card">
 
@@ -119,10 +127,13 @@ margin-top:20px;
 <script>
 
 function allowActivation(){
-localStorage.setItem("paid","yes");
+
+localStorage.setItem("payment_clicked","yes");
+
 }
 
 </script>
 
 </body>
+
 </html>
