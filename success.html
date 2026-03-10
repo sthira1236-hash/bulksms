@@ -21,18 +21,18 @@ margin-top:100px;
 
 .box{
 background:white;
-padding:30px;
+padding:40px;
+border-radius:10px;
 width:400px;
 margin:auto;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.2);
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .license{
 font-size:20px;
-color:#28a745;
-margin-top:20px;
 font-weight:bold;
+color:#16a34a;
+margin-top:20px;
 }
 
 </style>
@@ -47,21 +47,23 @@ font-weight:bold;
 
 <p>Your license has been generated.</p>
 
-<div class="license" id="license"></div>
+<div id="license" class="license"></div>
 
-<p>Copy this license and activate your app.</p>
+<p>Copy this license and activate inside the app.</p>
 
 </div>
 
 <script>
 
 const supabaseUrl = "https://ofbsotsqpeentfylextt.supabase.co";
-const supabaseKey = "sb_publishable_Fj7rL2hMV5PicBRmJ_zhDQ_1Qmns_zc";
+const supabaseKey = "YOUR_SUPABASE_ANON_KEY";
 
 const client = supabase.createClient(supabaseUrl, supabaseKey);
 
 function generateLicense(){
+
 return "SMS-" + Math.random().toString(36).substring(2,10).toUpperCase();
+
 }
 
 async function createLicense(){
@@ -70,7 +72,9 @@ let license = generateLicense();
 
 document.getElementById("license").innerHTML = license;
 
-await client.from("licenses").insert([
+await client
+.from("licenses")
+.insert([
 {
 license_key: license,
 status: "active"
