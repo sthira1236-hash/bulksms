@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Activate License</title>
+<title>Activate Bulk SMS License</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 
@@ -14,45 +15,46 @@
 
 body{
 font-family:Arial;
-background:#f4f6f9;
-text-align:center;
-margin-top:100px;
+background:#f2f2f2;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
 
 .box{
 background:white;
-padding:30px;
-width:400px;
-margin:auto;
+padding:40px;
 border-radius:10px;
 box-shadow:0 0 10px rgba(0,0,0,0.2);
+width:350px;
+text-align:center;
 }
 
 input{
-width:90%;
+width:100%;
 padding:10px;
 margin-top:10px;
-font-size:16px;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 button{
-margin-top:15px;
+margin-top:20px;
 padding:10px 20px;
-background:#007bff;
+background:#2d7df6;
 color:white;
 border:none;
 border-radius:5px;
-font-size:16px;
+cursor:pointer;
 }
 
 button:hover{
-background:#0056b3;
+background:#1c5ad8;
 }
 
-.result{
+#result{
 margin-top:20px;
-font-size:18px;
-color:#28a745;
 font-weight:bold;
 }
 
@@ -66,54 +68,68 @@ font-weight:bold;
 
 <h2>Activate License</h2>
 
-<p>Enter your Device ID to generate license.</p>
+<p>Enter your License Key</p>
 
-<input type="text" id="deviceid" placeholder="Enter Device ID">
+<input id="licensekey" placeholder="License Key">
 
-<br>
+<p>Enter Device ID</p>
 
-<button onclick="generateLicense()">Generate License</button>
+<input id="deviceid" placeholder="Device ID">
 
-<div class="result" id="result"></div>
+<button onclick="activateLicense()">Activate License</button>
+
+<div id="result"></div>
 
 </div>
 
 <script>
-
-if(localStorage.getItem("paid") !== "yes"){
-alert("Please purchase the license first.");
-window.location.href="index.html";
-}
 
 const supabaseUrl = "https://ofbsotsqpeentfylextt.supabase.co";
 const supabaseKey = "sb_publishable_Fj7rL2hMV5PicBRmJ_zhDQ_1Qmns_zc";
 
 const client = supabase.createClient(supabaseUrl, supabaseKey);
 
-async function generateLicense(){
+async function activateLicense(){
 
+let license = document.getElementById("licensekey").value;
 let deviceId = document.getElementById("deviceid").value;
 
-if(deviceId==""){
-alert("Enter Device ID");
+if(license=="" || deviceId==""){
+alert("Enter License and Device ID");
 return;
 }
 
-let license = btoa(deviceId + "-RADHA-BULKSMS");
+const { data } = await client
+.from("licenses")
+.select("*")
+.eq("license_key",license)
+.single();
 
-document.getElementById("result").innerHTML =
-"License Key: " + license;
+if(!data){
 
-await client.from("licenses").insert([
-{
-device_id: deviceId,
-license_key: license
+document.getElementById("result").innerHTML="Invalid License";
+return;
+
 }
-]);
+
+if(data.device_id && data.device_id !== deviceId){
+
+document.getElementById("result").innerHTML="License already used on another device";
+return;
+
+}
+
+await client
+.from("licenses")
+.update({ device_id: deviceId })
+.eq("license_key",license);
+
+document.getElementById("result").innerHTML="License Activated Successfully";
 
 }
 
 </script>
 
 </body>
+
 </html>
