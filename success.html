@@ -2,52 +2,39 @@
 
 <html>
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Payment Successful</title>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
 <style>
+
 body{
-font-family:Arial, sans-serif;
+font-family:Arial;
 background:#f4f6f9;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-margin:0;
+text-align:center;
+margin-top:100px;
 }
 
 .box{
 background:white;
-padding:40px;
+padding:30px;
+width:400px;
+margin:auto;
 border-radius:10px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-text-align:center;
-width:360px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
 }
 
-h2{
-color:#2e7d32;
-margin-bottom:10px;
-}
-
-p{
-color:#555;
-font-size:16px;
-}
-
-button{
+.license{
+font-size:20px;
+color:#0d6efd;
+font-weight:bold;
 margin-top:20px;
-padding:12px 25px;
-font-size:16px;
-background:#1e73e8;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
 }
 
-button:hover{
-background:#1557b0;
-}
 </style>
 
 </head>
@@ -58,15 +45,40 @@ background:#1557b0;
 
 <h2>Payment Successful</h2>
 
-<p>Your payment was completed successfully.</p>
+<p>Your license has been generated.</p>
 
-<p>Click below to activate your Bulk SMS license.</p>
+<div class="license" id="license"></div>
 
-<a href="activate.html">
-<button>Activate License</button>
-</a>
+<p>Copy this license and activate inside the app.</p>
 
 </div>
+
+<script>
+
+const supabaseUrl = "https://ofbsotsqpeentfylextt.supabase.co";
+const supabaseKey = "https://sthira1236-hash.github.io/bulksms/success.html";
+
+const client = supabase.createClient(supabaseUrl, supabaseKey);
+
+function generateLicense(){
+return "SMS-" + Math.random().toString(36).substring(2,10).toUpperCase();
+}
+
+async function createLicense(){
+
+let license = generateLicense();
+
+await client
+.from("licenses")
+.insert([{license_key: license, status: "active"}]);
+
+document.getElementById("license").innerHTML = license;
+
+}
+
+createLicense();
+
+</script>
 
 </body>
 </html>
