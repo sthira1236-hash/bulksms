@@ -1,66 +1,52 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Bulk SMS Software Android | SMS Marketing App</title>
-
-<meta name="description" content="Android Bulk SMS Software for sending promotional SMS, marketing SMS and customer notifications easily.">
-
-<meta name="keywords" content="bulk sms software android, bulk sms sender apk, sms marketing android, bulk sms sender app">
-
-<meta name="robots" content="index, follow">
-
-<meta name="google-site-verification" content="2dPUVR7bzkCJ09pZkwJuJK5Xsv28v0RdY34NjwcCJhs" />
+<title>Bulk SMS Software License</title>
 
 <style>
 
 body{
-font-family:Arial;
-margin:0;
+font-family: Arial;
 background:#f4f6f9;
-}
-
-header{
-background:#0d6efd;
-color:white;
-padding:25px;
+margin:0;
+padding:0;
 text-align:center;
 }
 
 .container{
-width:90%;
 max-width:900px;
 margin:auto;
-margin-top:30px;
+padding:40px;
+}
+
+h1{
+color:#333;
 }
 
 .card{
 background:white;
 padding:30px;
+margin-top:20px;
 border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-margin-bottom:30px;
-text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 
-h2{
-margin-top:0;
-}
-
-.features{
-text-align:left;
-line-height:1.8;
+.price{
+font-size:28px;
+color:#28a745;
+font-weight:bold;
 }
 
 .btn{
 display:inline-block;
+margin-top:20px;
 padding:12px 25px;
-margin:10px;
-background:#0d6efd;
+background:#007bff;
 color:white;
 text-decoration:none;
 border-radius:6px;
@@ -68,21 +54,12 @@ font-size:16px;
 }
 
 .btn:hover{
-background:#084298;
+background:#0056b3;
 }
 
-.price{
-font-size:28px;
-color:#0d6efd;
-font-weight:bold;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#222;
-color:white;
-margin-top:40px;
+.features{
+text-align:left;
+margin-top:20px;
 }
 
 </style>
@@ -91,35 +68,21 @@ margin-top:40px;
 
 <body>
 
-<header>
-<h1>Bulk SMS Software</h1>
-<p>Android SMS Marketing & Promotional Messaging Tool</p>
-</header>
-
 <div class="container">
 
-<div class="card">
-
-<h2>Download Android App</h2>
-
-<p>Install the Bulk SMS Sender app and start sending promotional SMS to your customers easily.</p>
-
-<a class="btn" href="bulksms.apk">Download APK</a>
-
-</div>
+<h1>Bulk SMS Software</h1>
 
 <div class="card">
 
-<h2>Software Features</h2>
+<h2>Features</h2>
 
 <div class="features">
 
-✔ Send Bulk SMS instantly <br>
-✔ Import phone numbers <br>
-✔ Marketing SMS campaigns <br>
-✔ Customer notification messages <br>
-✔ Fast Android SMS sender <br>
-✔ Easy license activation
+<p>✔ Fast Android SMS Sender</p>
+<p>✔ Send Bulk SMS Easily</p>
+<p>✔ No Monthly Fee</p>
+<p>✔ Lifetime License</p>
+<p>✔ Easy License Activation</p>
 
 </div>
 
@@ -133,7 +96,9 @@ margin-top:40px;
 
 <p>Buy license and unlock the full version of the Bulk SMS Software.</p>
 
-<a class="btn" href="https://razorpay.me/@rradhakrishnan757">Buy License</a>
+<a class="btn" href="https://razorpay.me/@radhakrishnan757" onclick="allowActivation()">Buy License</a>
+
+<br><br>
 
 <a class="btn" href="activate.html">Activate License</a>
 
@@ -151,11 +116,13 @@ margin-top:40px;
 
 </div>
 
-<footer>
+<script>
 
-© 2026 Bulk SMS Software
+function allowActivation(){
+localStorage.setItem("paid","yes");
+}
 
-</footer>
+</script>
 
 </body>
 </html>
